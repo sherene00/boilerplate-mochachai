@@ -4,7 +4,8 @@
   "description": "Boilerplate for the Quality Assurance and Testing with Chai challenges",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "echo 'No build process required for this Node.js application'"
   },
   "dependencies": {
     "body-parser": "1.19.0",
