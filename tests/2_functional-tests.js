@@ -42,7 +42,7 @@ suite('Functional Tests', function () {
       .send({surname: "Colombo"})
         .end(function (err, res) {
         assert.equal(res.status, 200);
-        assert.equal(res.type, 'text/html');
+        assert.equal(res.type, 'application/json');
         assert.include(res.text, 'Colombo');
           done();
         });
@@ -56,7 +56,7 @@ suite('Functional Tests', function () {
         .send({surname: "da Verrazzano"})
         .end(function (err, res) {
           assert.equal(res.status, 200);
-          assert.equal(res.type, 'text/html');
+          assert.equal(res.type, 'application/json');
           assert.include(res.text, 'da Verrazzano');
           done();
         });
@@ -74,6 +74,7 @@ suite('Functional Tests with Zombie.js', function () {
   const browser = new Browser();
   suite('Headless browser', function () {
     suiteSetup(function(done) {
+      browser.site = 'http://localhost:3000';
       return browser.visit('/', done);
     });
 
